@@ -300,6 +300,11 @@ textarea {
   color: var(--text);
 }
 
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .site-footer {
   border-top: 1px solid var(--line);
   background: #fff;
