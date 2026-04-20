@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact | Meraki Events n Decor</title>
+    <meta
+      name="description"
+      content="Contact Meraki Events n Decor for wedding and event decor inquiries via call, WhatsApp, and direct inquiry form."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" id="contactBrand">
+          <img src="assets/meraki-logo.svg" alt="Meraki logo" class="brand-logo" />
+          <span id="contactBrandText">Meraki Events n Decor</span>
+        </a>
+        <nav class="nav-links force-open">
+          <a href="index.html">Home</a>
+          <a href="#contactForm">Inquiry Form</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="contactForm" class="section forum-hero">
+        <div class="container forum-grid">
+          <div>
+            <p class="eyebrow">Get in Touch</p>
+            <h1>Plan Your Event with Meraki</h1>
+            <p>Reach us instantly via call, WhatsApp, or submit your inquiry form.</p>
+            <ul class="contact-list" id="forumContactList"></ul>
+            <div class="form-actions" style="margin-top: 1rem">
+              <a class="btn btn-primary" href="tel:+61450062206">Call Now</a>
+              <a class="btn btn-light" href="https://wa.me/61450062206?text=Hi%20Meraki%20Events%20n%20Decor%2C%20I%20want%20to%20enquire%20about%20event%20decor." target="_blank" rel="noopener noreferrer">WhatsApp</a>
+              <a class="btn btn-light" href="mailto:gupta.vardan@gmail.com">Email</a>
+            </div>
+          </div>
+
+          <form class="card forum-form" id="inquiryForm" action="https://formsubmit.co/gupta.vardan@gmail.com" method="POST">
+            <h2>Event Inquiry</h2>
+            <input type="hidden" name="_subject" value="New website inquiry - Meraki Events n Decor" />
+            <input type="hidden" name="_captcha" value="false" />
+            <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://meraki.example.com/thank-you" />
+
+            <label>Full Name<input name="name" required type="text" placeholder="Enter your full name" /></label>
+            <label>Phone Number<input name="phone" required type="tel" placeholder="Your contact number" /></label>
+            <label>Event Type<input name="event_type" required type="text" placeholder="Wedding, Reception, Haldi, etc." /></label>
+            <label>Event Date<input name="event_date" type="date" /></label>
+            <label>Venue / City<input name="venue" type="text" placeholder="Venue or city" /></label>
+            <label>Message<textarea name="message" rows="4" placeholder="Share your expectations and guest count"></textarea></label>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            </div>
+            <p class="hint">On first setup, FormSubmit may ask email verification once.</p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> <span id="contactFooterBusiness">Meraki Events n Decor</span></p>
+        <a href="index.html">Back to Home</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meraki Events n Decor | Pune Weddings & Event Styling</title>
+    <meta
+      name="description"
+      content="Meraki Events n Decor creates elegant weddings and event decor in Pune with complete planning and execution services."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" id="brandName">
+          <img src="assets/meraki-logo.svg" alt="Meraki logo" class="brand-logo" />
+          <span id="brandText">Meraki Events n Decor</span>
+        </a>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav id="mainNav" class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero section">
+        <div class="hero-overlay"></div>
+        <div class="container hero-grid">
+          <div class="hero-content">
+            <p class="eyebrow">Pune • Wedding Planning • Event Decor</p>
+            <h1 id="heroTagline">Elegant Weddings & Events, Designed with Meraki</h1>
+            <p>
+              We design beautiful wedding and celebration spaces with personalized themes, premium decor styling,
+              and smooth on-ground execution.
+            </p>
+            <div class="hero-cta">
+              <a class="btn btn-primary" id="callBtn" href="tel:+61450062206">Call +61 450 062 206</a>
+              <a class="btn btn-light" href="contact.html">Book Consultation</a>
+            </div>
+            <div class="hero-mini" id="contactStrip"></div>
+          </div>
+
+          <div class="hero-panel card">
+            <h2>Signature Decor Services</h2>
+            <ul>
+              <li>Wedding stage & mandap styling</li>
+              <li>Engagement, haldi & sangeet decor</li>
+              <li>Floral design and entrance concepts</li>
+              <li>Event day coordination</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="section">
+        <div class="container split-grid">
+          <div>
+            <h2>About Meraki</h2>
+            <p>
+              <strong id="aboutBusiness">Meraki Events n Decor</strong> is led by creativity, elegance, and detail.
+              Our team works closely with families to translate ideas into warm, memorable, and visually stunning
+              celebrations.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Business Details</h3>
+            <ul id="quickDetails"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="services" class="section alt">
+        <div class="container">
+          <h2>Our Services</h2>
+          <div class="service-grid">
+            <article class="card"><h3>Wedding Planning</h3><p>Planning assistance from concept to celebration day.</p></article>
+            <article class="card"><h3>Event Decor</h3><p>Theme-based decor for weddings and social events.</p></article>
+            <article class="card"><h3>Execution</h3><p>Vendor and timeline management for stress-free events.</p></article>
+          </div>
+        </div>
+      </section>
+
+      <section id="gallery" class="section">
+        <div class="container">
+          <h2>Recent Event Gallery</h2>
+          <p>Real photos from your shared Google Drive event collection.</p>
+          <div class="portfolio-grid">
+            <img src="assets/work-1.svg" alt="Meraki stage decor" loading="lazy" />
+            <img src="assets/work-2.svg" alt="Meraki floral setup" loading="lazy" />
+            <img src="assets/work-3.svg" alt="Meraki wedding decor" loading="lazy" />
+            <img src="assets/work-1.svg" alt="Meraki reception decor" loading="lazy" />
+            <img src="assets/work-2.svg" alt="Meraki engagement decor" loading="lazy" />
+            <img src="assets/work-3.svg" alt="Meraki aisle decor" loading="lazy" />
+          </div>
+
+          <div class="drive-panel card">
+            <h3>See Complete Event Album</h3>
+            <p>Explore all recent setups directly in Google Drive.</p>
+            <a class="btn btn-light" target="_blank" rel="noopener noreferrer" href="https://drive.google.com/drive/folders/1OfuHh6qv8I1UKdIUGpx8s-ZlJScgmIAZ?usp=drive_link">Open Full Album</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="section cta-band">
+        <div class="container cta-inner">
+          <div>
+            <h2>Let’s Design Your Celebration</h2>
+            <p>Share your event date, city, and ideas — our team will connect quickly.</p>
+          </div>
+          <a class="btn btn-primary" href="contact.html">Go to Contact Form</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> <span id="footerBusiness">Meraki Events n Decor</span></p>
+        <a href="contact.html">Contact</a>
+      </div>
+    </footer>
+
+    <script type="application/ld+json" id="schemaData"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
