@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Forum | Meraki Concepts & Decor</title>
+    <meta
+      name="description"
+      content="Send your event inquiry to Meraki Concepts & Decor via WhatsApp or email using this contact forum page."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" id="contactBrand">Meraki Concepts & Decor</a>
+        <nav class="nav-links force-open">
+          <a href="index.html">Home</a>
+          <a href="#contactForum">Forum</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="contactForum" class="section forum-hero">
+        <div class="container forum-grid">
+          <div>
+            <p class="eyebrow">Forum / Inquiry Page</p>
+            <h1>Tell Us About Your Event</h1>
+            <p>
+              Fill this quick forum and choose your preferred contact channel. You can send your details directly on
+              WhatsApp or open your email draft instantly.
+            </p>
+            <ul class="contact-list" id="forumContactList"></ul>
+          </div>
+
+          <form class="card forum-form" id="inquiryForm">
+            <h2>Event Inquiry Forum</h2>
+            <label>
+              Your Name
+              <input name="name" required type="text" placeholder="Enter your full name" />
+            </label>
+            <label>
+              Phone Number
+              <input name="phone" required type="tel" placeholder="Your best contact number" />
+            </label>
+            <label>
+              Event Type
+              <input name="eventType" required type="text" placeholder="Wedding, Reception, Haldi, etc." />
+            </label>
+            <label>
+              Event Date
+              <input name="eventDate" type="date" />
+            </label>
+            <label>
+              Event Venue
+              <input name="venue" type="text" placeholder="City / Venue name" />
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="4" placeholder="Share your theme, guest count, and budget range"></textarea>
+            </label>
+            <div class="form-actions">
+              <button type="button" class="btn btn-primary" id="sendWhatsApp">Send on WhatsApp</button>
+              <button type="button" class="btn btn-light" id="sendEmail">Send via Email</button>
+            </div>
+            <p class="hint" id="forumHint">
+              WhatsApp testing number is set to +61450062206 (as requested). You can change it in
+              <code>data/contact.json</code> later.
+            </p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> <span id="contactFooterBusiness">Meraki Concepts & Decor</span></p>
+        <a href="index.html">Back to Home</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

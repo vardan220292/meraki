@@ -1,0 +1,16 @@
+{
+  "images": [
+    {
+      "src": "assets/work-1.svg",
+      "alt": "Sample decor setup"
+    },
+    {
+      "src": "assets/work-2.svg",
+      "alt": "Sample stage decor"
+    },
+    {
+      "src": "assets/work-3.svg",
+      "alt": "Sample floral decor"
+    }
+  ]
+}

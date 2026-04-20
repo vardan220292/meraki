@@ -3,193 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Meraki Concepts & Decor | Pune Wedding Planning & Event Decor</title>
+    <title>Meraki Concepts & Decor | Luxury Wedding Planning in Pune</title>
     <meta
       name="description"
-      content="Meraki Concepts & Decor is a Pune-based wedding planning and event decor service led by Jigna Solanki Patil."
+      content="Meraki Concepts & Decor is a Pune-based event decor and wedding planning company. Explore our work, services, and contact us for your next celebration."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header class="site-header" id="top">
-      <nav class="container nav">
-        <a href="#top" class="brand">Meraki Concepts & Decor</a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <div class="container nav-wrap">
+        <a href="index.html" class="brand" id="brandName">Meraki Concepts & Decor</a>
+        <button id="menuToggle" class="menu-toggle" aria-label="Toggle navigation">☰</button>
+        <nav id="mainNav" class="nav-links">
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#gallery">Gallery</a>
+          <a href="contact.html">Forum / Contact</a>
+        </nav>
+      </div>
     </header>
 
     <main>
-      <section class="hero">
+      <section class="hero section">
         <div class="container hero-grid">
           <div>
-            <p class="eyebrow">Wedding Planning Service • Pune</p>
-            <h1>Elegant Weddings & Events, Designed with Meraki</h1>
+            <p class="eyebrow">Wedding Planning • Event Decor • Pune</p>
+            <h1 id="heroTagline">Elegant Weddings & Events, Designed with Meraki</h1>
             <p>
-              Meraki Concepts & Decor curates heartfelt celebrations with creative planning,
-              thoughtful styling, and flawless on-ground execution.
+              We design deeply personal and visually stunning celebrations with full-service planning,
+              decor styling, vendor management, and on-ground coordination.
             </p>
-            <div class="hero-actions">
-              <a class="btn btn-primary" href="tel:+919930807711">Call +91 99308 07711</a>
-              <a class="btn btn-secondary" href="mailto:merakieventsndecor@gmail.com">Email Us</a>
+            <div class="hero-cta">
+              <a class="btn btn-primary" id="callBtn" href="tel:+919930807711">Call Now</a>
+              <a class="btn btn-light" href="contact.html">Book a Consultation</a>
             </div>
+            <div class="hero-mini" id="contactStrip"></div>
           </div>
-          <div class="card quick-info">
-            <h2>Quick Info</h2>
+          <div class="hero-card glass">
+            <h2>What We Create</h2>
             <ul>
-              <li><strong>Founder:</strong> Jigna Solanki Patil</li>
-              <li><strong>Category:</strong> Wedding Planning Service</li>
-              <li><strong>Location:</strong> Pune, Maharashtra, India</li>
-              <li><strong>Status:</strong> Closed now (hours vary)</li>
+              <li>Signature wedding concepts</li>
+              <li>Luxury floral and stage décor</li>
+              <li>Engagement, haldi, sangeet & reception setups</li>
+              <li>End-to-end event coordination</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="section" id="about">
-        <div class="container split">
+      <section id="about" class="section">
+        <div class="container split-grid">
           <div>
-            <h2>About Meraki</h2>
+            <h2>About Us</h2>
             <p>
-              At Meraki Concepts & Decor, we believe every event should feel personal,
-              memorable, and beautifully detailed. From intimate ceremonies to grand
-              wedding celebrations, we blend aesthetics with practical planning so you can
-              enjoy your special day stress-free.
+              At <strong id="aboutBusiness">Meraki Concepts & Decor</strong>, every function is crafted with heart,
+              attention to detail, and modern aesthetics. We combine creativity with flawless execution so families can
+              enjoy every moment stress-free.
             </p>
           </div>
           <div class="card">
-            <h3>Why Families Choose Us</h3>
-            <ul>
-              <li>Customized themes and décor concepts</li>
-              <li>End-to-end wedding planning support</li>
-              <li>Vendor coordination and timeline management</li>
-              <li>Warm, client-focused execution</li>
-            </ul>
+            <h3>Quick Details</h3>
+            <ul id="quickDetails"></ul>
           </div>
         </div>
       </section>
 
-      <section class="section section-alt" id="services">
+      <section id="services" class="section alt">
         <div class="container">
           <h2>Our Services</h2>
-          <div class="cards">
-            <article class="card">
+          <div class="service-grid">
+            <article class="card service-card">
               <h3>Wedding Planning</h3>
-              <p>Concept to completion planning for weddings and pre-wedding functions.</p>
+              <p>Timeline planning, budgeting, guest flow, and complete wedding management.</p>
             </article>
-            <article class="card">
-              <h3>Event Decor</h3>
-              <p>Theme-based stage design, floral styling, and venue transformation.</p>
+            <article class="card service-card">
+              <h3>Decor Design</h3>
+              <p>Theme design, floral styling, stage decor, mandap styling, and statement installations.</p>
             </article>
-            <article class="card">
-              <h3>Coordination & Execution</h3>
-              <p>On-site management for smooth flow, guest comfort, and timely delivery.</p>
+            <article class="card service-card">
+              <h3>On-ground Coordination</h3>
+              <p>Vendor coordination and real-time execution for smooth, elegant celebrations.</p>
             </article>
           </div>
         </div>
       </section>
 
-      <section class="section" id="gallery">
+      <section id="gallery" class="section">
         <div class="container">
-          <h2>Recent Work & Brand Assets</h2>
-          <p>
-            Add your latest logo and event photos in the <code>assets/</code> folder and update
-            the image paths below. A Google Drive folder has already been provided for source
-            files.
-          </p>
-          <div class="gallery-grid">
-            <img src="assets/logo.svg" alt="Meraki Concepts & Decor logo placeholder" />
-            <img src="assets/work-1.svg" alt="Wedding décor setup placeholder" />
-            <img src="assets/work-2.svg" alt="Reception stage décor placeholder" />
-            <img src="assets/work-3.svg" alt="Floral aisle décor placeholder" />
+          <h2>Gallery</h2>
+          <p>Recent work from your manual image folder and curated showcase.</p>
+          <div id="manualGallery" class="gallery-grid"></div>
+
+          <div class="drive-panel card">
+            <h3>Google Drive Live Gallery</h3>
+            <p>
+              This section shows photos directly from your Google Drive folder. Keep adding photos to Drive and this
+              embed updates automatically.
+            </p>
+            <div class="drive-embed-wrap">
+              <iframe
+                id="driveFrame"
+                title="Meraki Drive Gallery"
+                loading="lazy"
+                referrerpolicy="no-referrer"
+                src="https://drive.google.com/embeddedfolderview?id=1OfuHh6qv8I1UKdIUGpx8s-ZlJScgmIAZ#grid"
+              ></iframe>
+            </div>
           </div>
-          <a
-            class="btn btn-secondary"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://drive.google.com/drive/folders/1OfuHh6qv8I1UKdIUGpx8s-ZlJScgmIAZ?usp=drive_link"
-            >Open Shared Photo Drive</a
-          >
         </div>
       </section>
 
-      <section class="section section-alt" id="contact">
-        <div class="container contact">
+      <section class="section alt cta-band">
+        <div class="container cta-inner">
           <div>
-            <h2>Contact Us</h2>
-            <p>Let’s plan a celebration that reflects your story.</p>
-            <ul class="contact-list">
-              <li><strong>Phone:</strong> <a href="tel:+919930807711">+91 99308 07711</a></li>
-              <li>
-                <strong>Email:</strong>
-                <a href="mailto:merakieventsndecor@gmail.com">merakieventsndecor@gmail.com</a>
-              </li>
-              <li><strong>Address:</strong> Pune, Pune, India</li>
-              <li>
-                <strong>Facebook:</strong>
-                <a
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://www.facebook.com/MerakiConceptsEvents/"
-                  >Meraki Concepts & Decor</a
-                >
-              </li>
-            </ul>
+            <h2>Planning a Wedding or Event?</h2>
+            <p>Share your date, venue, and vision — we’ll shape it into a beautiful experience.</p>
           </div>
-          <form class="card contact-form" onsubmit="return false;">
-            <h3>Quick Inquiry</h3>
-            <label>
-              Name
-              <input type="text" placeholder="Your name" />
-            </label>
-            <label>
-              Phone
-              <input type="tel" placeholder="Your phone number" />
-            </label>
-            <label>
-              Event Type
-              <input type="text" placeholder="Wedding / Engagement / Other" />
-            </label>
-            <button class="btn btn-primary" type="button" id="inquiryBtn">Send on WhatsApp</button>
-            <p class="hint">This opens WhatsApp with a pre-filled message.</p>
-          </form>
+          <a class="btn btn-primary" href="contact.html">Open Contact Forum</a>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
-      <div class="container">
-        <p>© <span id="year"></span> Meraki Concepts & Decor. All rights reserved.</p>
+      <div class="container footer-wrap">
+        <p>© <span id="year"></span> <span id="footerBusiness">Meraki Concepts & Decor</span></p>
+        <a href="contact.html">Forum / Contact Page</a>
       </div>
     </footer>
 
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "EventPlanner",
-        "name": "Meraki Concepts & Decor",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Pune",
-          "addressRegion": "Maharashtra",
-          "addressCountry": "IN"
-        },
-        "telephone": "+91 99308 07711",
-        "email": "merakieventsndecor@gmail.com",
-        "sameAs": ["https://www.facebook.com/MerakiConceptsEvents/"]
-      }
-    </script>
+    <script type="application/ld+json" id="schemaData"></script>
     <script src="script.js"></script>
   </body>
 </html>
