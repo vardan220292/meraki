@@ -1,80 +1,440 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Meraki Events n Decor</title>
-    <meta
-      name="description"
-      content="Contact Meraki Events n Decor for wedding and event decor inquiries via call, WhatsApp, and direct inquiry form."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header class="site-header">
-      <div class="container nav-wrap">
-        <a href="index.html" class="brand" id="contactBrand">
-          <img src="assets/meraki-logo.svg" alt="Meraki logo" class="brand-logo" />
-          <span id="contactBrandText">Meraki Events n Decor</span>
-        </a>
-        <nav class="nav-links force-open">
-          <a href="index.html">Home</a>
-          <a href="#contactForm">Inquiry Form</a>
-        </nav>
-      </div>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Meraki Events & Decor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ===========================
+       CONTACT PAGE SPECIFIC
+       =========================== */
+    .contact-hero {
+      background: var(--deep);
+      padding: 10rem 4rem 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact-hero::before {
+      content: '❧';
+      position: absolute;
+      font-size: 18rem;
+      color: var(--gold);
+      opacity: 0.04;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .contact-hero .section-title.light { margin-bottom: 1rem; }
+    .contact-hero p {
+      color: rgba(255,255,255,0.6);
+      font-size: 0.9rem;
+      line-height: 1.8;
+      max-width: 500px;
+      margin: 0 auto;
+    }
 
-    <main>
-      <section id="contactForm" class="section forum-hero">
-        <div class="container forum-grid">
-          <div>
-            <p class="eyebrow">Get in Touch</p>
-            <h1>Plan Your Event with Meraki</h1>
-            <p>Reach us instantly via call, WhatsApp, or submit your inquiry form.</p>
-            <ul class="contact-list" id="forumContactList"></ul>
-            <div class="form-actions" style="margin-top: 1rem">
-              <a class="btn btn-primary" href="tel:+61450062206">Call Now</a>
-              <a class="btn btn-light" href="https://wa.me/61450062206?text=Hi%20Meraki%20Events%20n%20Decor%2C%20I%20want%20to%20enquire%20about%20event%20decor." target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a class="btn btn-light" href="mailto:gupta.vardan@gmail.com">Email</a>
-            </div>
-          </div>
+    .contact-body {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 80vh;
+    }
 
-          <form class="card forum-form" id="inquiryForm" action="https://formsubmit.co/gupta.vardan@gmail.com" method="POST">
-            <h2>Event Inquiry</h2>
-            <input type="hidden" name="_subject" value="New website inquiry - Meraki Events n Decor" />
-            <input type="hidden" name="_captcha" value="false" />
-            <input type="hidden" name="_template" value="table" />
-            <input type="hidden" name="_next" value="https://meraki.example.com/thank-you" />
+    /* LEFT — Direct Actions */
+    .contact-actions {
+      background: var(--cream-warm);
+      padding: 6rem 5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .contact-actions .section-eyebrow { margin-bottom: 0.5rem; }
+    .contact-actions h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--deep);
+      margin-bottom: 0.5rem;
+    }
+    .contact-actions > p {
+      font-size: 0.85rem;
+      line-height: 1.8;
+      color: var(--text-light);
+      margin-bottom: 1rem;
+    }
 
-            <label>Full Name<input name="name" required type="text" placeholder="Enter your full name" /></label>
-            <label>Phone Number<input name="phone" required type="tel" placeholder="Your contact number" /></label>
-            <label>Event Type<input name="event_type" required type="text" placeholder="Wedding, Reception, Haldi, etc." /></label>
-            <label>Event Date<input name="event_date" type="date" /></label>
-            <label>Venue / City<input name="venue" type="text" placeholder="Venue or city" /></label>
-            <label>Message<textarea name="message" rows="4" placeholder="Share your expectations and guest count"></textarea></label>
+    .action-btn {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      padding: 1.3rem 1.8rem;
+      border: 1px solid rgba(201,169,110,0.25);
+      background: var(--white);
+      text-decoration: none;
+      color: var(--deep);
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+    }
+    .action-btn:hover {
+      border-color: var(--gold);
+      background: var(--cream);
+      transform: translateX(4px);
+    }
+    .action-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .action-text strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--deep);
+    }
+    .action-text span {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      letter-spacing: 0.05em;
+    }
 
-            <div class="form-actions">
-              <button type="submit" class="btn btn-primary">Send Inquiry</button>
-            </div>
-            <p class="hint">On first setup, FormSubmit may ask email verification once.</p>
-          </form>
+    .contact-divider {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin: 0.5rem 0;
+    }
+    .contact-divider::before,
+    .contact-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(201,169,110,0.25);
+    }
+    .contact-divider span {
+      font-size: 0.65rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--text-light);
+    }
+
+    /* RIGHT — Inquiry Form */
+    .contact-form-col {
+      background: var(--deep);
+      padding: 6rem 5rem;
+    }
+    .contact-form-col .section-eyebrow { color: var(--gold); margin-bottom: 0.5rem; }
+    .contact-form-col h2 {
+      font-family: var(--font-display);
+      font-size: 2.5rem;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 2.5rem;
+    }
+
+    .inquiry-form { display: flex; flex-direction: column; gap: 1.2rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.2rem; }
+
+    .form-field { display: flex; flex-direction: column; gap: 0.5rem; }
+    .form-field label {
+      font-size: 0.62rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,169,110,0.2);
+      color: var(--white);
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      padding: 0.9rem 1.1rem;
+      outline: none;
+      transition: border-color 0.3s, background 0.3s;
+      width: 100%;
+    }
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus {
+      border-color: var(--gold);
+      background: rgba(255,255,255,0.08);
+    }
+    .form-field select option { background: var(--deep-mid); color: var(--white); }
+    .form-field textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit { margin-top: 0.5rem; }
+    .form-submit .btn-primary { width: 100%; text-align: center; border: none; cursor: pointer; font-family: var(--font-body); }
+
+    /* Hours & Address */
+    .contact-info {
+      background: var(--cream);
+      padding: 5rem 7rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+      text-align: center;
+    }
+    .info-block h4 {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--deep);
+      margin-bottom: 0.5rem;
+    }
+    .info-block p {
+      font-size: 0.83rem;
+      line-height: 1.8;
+      color: var(--text-light);
+    }
+    .info-block .info-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    @media (max-width: 768px) {
+      .contact-body { grid-template-columns: 1fr; }
+      .contact-actions,
+      .contact-form-col { padding: 4rem 1.5rem; }
+      .contact-info { grid-template-columns: 1fr; padding: 4rem 1.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOPBAR -->
+  <div class="topbar">
+    <span>✦ Sydney, Australia</span>
+    <span>✦ <a href="tel:+61400000000">+61 400 000 000</a></span>
+    <span>✦ Mon–Sat: 9AM – 6PM</span>
+  </div>
+
+  <!-- NAV -->
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-meraki">Meraki</span>
+      <span class="logo-sub">Events &amp; Decor</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#gallery">Gallery</a></li>
+      <li><a href="index.html#testimonials">Testimonials</a></li>
+      <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTACT HERO -->
+  <section class="contact-hero">
+    <p class="section-eyebrow light">Get In Touch</p>
+    <h2 class="section-title light">Let's Create Something<br/><em>Beautiful Together</em></h2>
+    <p>Ready to start planning? Reach out and let's begin the journey to your dream event.</p>
+  </section>
+
+  <!-- CONTACT BODY -->
+  <div class="contact-body">
+
+    <!-- LEFT: Direct Actions -->
+    <div class="contact-actions">
+      <p class="section-eyebrow">Reach Us Directly</p>
+      <h2>Talk to Us</h2>
+      <p>We'd love to hear from you. Reach out through any of these channels and we'll get back to you within 24 hours.</p>
+
+      <a href="tel:+61400000000" class="action-btn">
+        <div class="action-icon">📞</div>
+        <div class="action-text">
+          <strong>Call Us</strong>
+          <span>+61 400 000 000</span>
         </div>
-      </section>
-    </main>
+      </a>
 
-    <footer class="site-footer">
-      <div class="container footer-wrap">
-        <p>© <span id="year"></span> <span id="contactFooterBusiness">Meraki Events n Decor</span></p>
-        <a href="index.html">Back to Home</a>
+      <a href="https://wa.me/61400000000" target="_blank" class="action-btn">
+        <div class="action-icon">💬</div>
+        <div class="action-text">
+          <strong>WhatsApp Chat</strong>
+          <span>Quick replies, same day</span>
+        </div>
+      </a>
+
+      <a href="mailto:hello@merakievents.com.au" class="action-btn">
+        <div class="action-icon">✉️</div>
+        <div class="action-text">
+          <strong>Email Us</strong>
+          <span>hello@merakievents.com.au</span>
+        </div>
+      </a>
+
+      <a href="https://instagram.com" target="_blank" class="action-btn">
+        <div class="action-icon">📸</div>
+        <div class="action-text">
+          <strong>Follow on Instagram</strong>
+          <span>@meraki.events.decor</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- RIGHT: Inquiry Form -->
+    <div class="contact-form-col">
+      <p class="section-eyebrow">Send an Inquiry</p>
+      <h2>Tell Us About<br/>Your Event</h2>
+
+      <form
+        class="inquiry-form"
+        action="https://formsubmit.co/gupta.vardan@gmail.com"
+        method="POST"
+      >
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_subject" value="New Meraki Inquiry" />
+        <input type="hidden" name="_next" value="contact.html?sent=true" />
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>First Name *</label>
+            <input type="text" name="first_name" placeholder="Priya" required />
+          </div>
+          <div class="form-field">
+            <label>Last Name *</label>
+            <input type="text" name="last_name" placeholder="Sharma" required />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Email Address *</label>
+          <input type="email" name="email" placeholder="priya@example.com" required />
+        </div>
+
+        <div class="form-field">
+          <label>Phone Number</label>
+          <input type="tel" name="phone" placeholder="+61 400 000 000" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label>Event Type *</label>
+            <select name="event_type" required>
+              <option value="">Select…</option>
+              <option>Wedding Ceremony</option>
+              <option>Reception</option>
+              <option>Mehndi / Sangeet</option>
+              <option>Engagement</option>
+              <option>Corporate Event</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label>Event Date</label>
+            <input type="date" name="event_date" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label>Tell Us About Your Vision</label>
+          <textarea name="message" placeholder="Describe your dream event — theme, colours, guest count, venue…"></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button type="submit" class="btn-primary">Send My Inquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- INFO STRIP -->
+  <div class="contact-info">
+    <div class="info-block">
+      <div class="info-icon">📍</div>
+      <h4>Location</h4>
+      <p>Based in Sydney, Australia<br/>We service all of NSW & beyond</p>
+    </div>
+    <div class="info-block">
+      <div class="info-icon">🕐</div>
+      <h4>Business Hours</h4>
+      <p>Monday – Saturday<br/>9:00 AM – 6:00 PM AEST</p>
+    </div>
+    <div class="info-block">
+      <div class="info-icon">💌</div>
+      <h4>Response Time</h4>
+      <p>We reply to all enquiries<br/>within 24 hours</p>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <span class="logo-meraki">Meraki</span>
+          <span class="logo-sub">Events &amp; Decor</span>
+        </a>
+        <p>Crafting extraordinary celebrations with soul, creativity, and love. Sydney, Australia.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="WhatsApp">💬</a>
+        </div>
       </div>
-    </footer>
+      <div class="footer-col">
+        <h5>Quick Links</h5>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#services">Services</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Services</h5>
+        <ul>
+          <li><a href="index.html#services">Mandap Design</a></li>
+          <li><a href="index.html#services">Reception Styling</a></li>
+          <li><a href="index.html#services">Mehndi & Sangeet</a></li>
+          <li><a href="index.html#services">Floral Installations</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Contact</h5>
+        <ul>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="tel:+61400000000">+61 400 000 000</a></li>
+          <li><a href="mailto:hello@merakievents.com.au">hello@merakievents.com.au</a></li>
+          <li>Sydney, Australia</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Meraki Events & Decor. All rights reserved.</p>
+    </div>
+  </footer>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+  <script>
+    // Show success message if redirected after form submit
+    if (window.location.search.includes('sent=true')) {
+      const form = document.querySelector('.inquiry-form');
+      if (form) {
+        form.innerHTML = `
+          <div style="text-align:center;padding:3rem 0;">
+            <div style="font-size:3rem;margin-bottom:1rem;">✦</div>
+            <h3 style="font-family:var(--font-display);font-size:2rem;font-weight:300;color:var(--white);margin-bottom:1rem;">Thank You!</h3>
+            <p style="color:rgba(255,255,255,0.65);line-height:1.8;">Your inquiry has been sent. We'll be in touch within 24 hours to begin planning your beautiful day.</p>
+          </div>`;
+      }
+    }
+  </script>
+</body>
 </html>
