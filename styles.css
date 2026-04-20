@@ -76,8 +76,23 @@
   
   .nav-logo {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    gap: 0.65rem;
     line-height: 1;
+  }
+  .brand-logo {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    border-radius: 999px;
+    border: 1px solid rgba(201,169,110,0.35);
+    background: rgba(255,255,255,0.04);
+    padding: 0.2rem;
+    flex-shrink: 0;
+  }
+  .logo-stack {
+    display: flex;
+    flex-direction: column;
   }
   .logo-meraki {
     font-family: var(--font-display);
@@ -167,7 +182,7 @@
     position: absolute;
     inset: 0;
     background:
-      url('assets/hero.jpg') center/cover no-repeat,
+      url('assets/work-2.svg') center/cover no-repeat,
       linear-gradient(135deg, #1a0f0a 0%, #3d1f10 50%, #1a0f0a 100%);
     background-blend-mode: overlay;
   }
@@ -845,7 +860,8 @@
     margin-bottom: 1.5rem;
     max-width: 280px;
   }
-  .footer-logo { display: inline-flex; flex-direction: column; margin-bottom: 0.5rem; }
+  .footer-logo { display: inline-flex; align-items: center; gap: 0.7rem; margin-bottom: 0.5rem; }
+  .footer-logo-mark { width: 44px; height: 44px; object-fit: cover; border: 1px solid rgba(201,169,110,0.35); border-radius: 999px; padding: 0.1rem; background: rgba(255,255,255,0.06); }
   
   .social-links { display: flex; gap: 1rem; }
   .social-links a {
@@ -919,6 +935,7 @@
   @media (max-width: 768px) {
     .topbar { display: none; }
     .nav { padding: 1rem 1.5rem; margin-top: 0; }
+    .brand-logo { width: 44px; height: 44px; }
     .nav.scrolled { padding: 0.8rem 1.5rem; }
     .nav-links {
       display: none;
