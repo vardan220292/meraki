@@ -11,15 +11,11 @@ async function readJson(path) {
   }
 }
 
-function normalizePhoneForWhatsApp(phoneNumber) {
-  return phoneNumber.replace(/[^\d]/g, "");
-}
-
 function fillGlobalElements(contactData) {
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
-  const businessName = contactData.businessName || "Meraki Concepts & Decor";
+  const businessName = contactData.businessName || "Meraki Events n Decor";
   const nodes = [
     document.getElementById("brandText") || document.getElementById("brandName"),
     document.getElementById("footerBusiness"),
@@ -40,6 +36,7 @@ function fillHomePage(contactData) {
   const callBtn = document.getElementById("callBtn");
   if (callBtn && contactData.phone) {
     callBtn.href = `tel:${contactData.phone.replace(/\s+/g, "")}`;
+    callBtn.textContent = `Call ${contactData.phone}`;
   }
 
   const quickDetails = document.getElementById("quickDetails");
@@ -81,116 +78,16 @@ function fillHomePage(contactData) {
   }
 }
 
-function formPayload(form) {
-  const formData = new FormData(form);
-  return {
-    name: formData.get("name") || "",
-    phone: formData.get("phone") || "",
-    eventType: formData.get("eventType") || "",
-    eventDate: formData.get("eventDate") || "",
-    venue: formData.get("venue") || "",
-    message: formData.get("message") || "",
-    submittedAt: new Date().toISOString()
-  };
-}
-
-function payloadToMessage(payload) {
-  return [
-    "Hello Meraki Concepts & Decor,",
-    "I would like to inquire about an upcoming event.",
-    "",
-    `Name: ${payload.name}`,
-    `Phone: ${payload.phone}`,
-    `Event Type: ${payload.eventType}`,
-    `Event Date: ${payload.eventDate}`,
-    `Venue: ${payload.venue}`,
-    `Message: ${payload.message}`
-  ].join("\n");
-}
-
-async function sendInquiryToWebhook(webhookUrl, payload) {
-  const response = await fetch(webhookUrl, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(payload)
-  });
-
-  if (!response.ok) {
-    throw new Error("Webhook request failed");
-  }
-}
-
 function fillContactPage(contactData) {
   const contactList = document.getElementById("forumContactList");
-  if (contactList) {
-    contactList.innerHTML = `
-      <li><strong>Phone:</strong> ${contactData.phone || "-"}</li>
-      <li><strong>Email:</strong> ${contactData.email || "-"}</li>
-      <li><strong>Address:</strong> ${contactData.address || "-"}</li>
-      <li><strong>Facebook:</strong> <a href="${contactData.facebook || "#"}" target="_blank" rel="noopener noreferrer">Open Page</a></li>
-    `;
-  }
+  if (!contactList) return;
 
-  const hint = document.getElementById("forumHint");
-  if (hint) {
-    const webhookConfigured = contactData.inquiryWebhookUrl && contactData.inquiryWebhookUrl.startsWith("http");
-    hint.textContent = webhookConfigured
-      ? "Inquiry submit button is connected to webhook mode. You will receive details without opening visitor WhatsApp UI."
-      : `Webhook is not configured. WhatsApp button uses ${contactData.whatsappTestNumber || contactData.phone || "your default number"}.`;
-  }
-
-  const form = document.getElementById("inquiryForm");
-  const sendWhatsApp = document.getElementById("sendWhatsApp");
-  const sendEmail = document.getElementById("sendEmail");
-  const submitInquiry = document.getElementById("submitInquiry");
-
-  if (!form || !sendWhatsApp || !sendEmail) return;
-
-  sendWhatsApp.addEventListener("click", () => {
-    const payload = formPayload(form);
-    const number = normalizePhoneForWhatsApp(contactData.whatsappTestNumber || contactData.phone || "");
-    const message = encodeURIComponent(payloadToMessage(payload));
-    window.open(`https://wa.me/${number}?text=${message}`, "_blank");
-  });
-
-  sendEmail.addEventListener("click", () => {
-    const payload = formPayload(form);
-    const subject = encodeURIComponent("Event Inquiry - Meraki Concepts & Decor");
-    const body = encodeURIComponent(payloadToMessage(payload));
-    window.location.href = `mailto:${contactData.email || "gupta.vardan@gmail.com"}?subject=${subject}&body=${body}`;
-  });
-
-  if (submitInquiry) {
-    submitInquiry.addEventListener("click", async () => {
-      const payload = formPayload(form);
-      const webhookUrl = contactData.inquiryWebhookUrl || "";
-
-      if (!webhookUrl.startsWith("http")) {
-        alert("Please configure inquiryWebhookUrl in data/contact.json to receive direct notifications.");
-        return;
-      }
-
-      submitInquiry.disabled = true;
-      submitInquiry.textContent = "Submitting...";
-
-      try {
-        await sendInquiryToWebhook(webhookUrl, {
-          source: "meraki-website",
-          business: contactData.businessName || "Meraki Concepts & Decor",
-          inquiry: payload
-        });
-        alert("Inquiry submitted successfully. Team has been notified.");
-        form.reset();
-      } catch (error) {
-        alert("Could not submit inquiry. Please try WhatsApp or Email options.");
-      } finally {
-        submitInquiry.disabled = false;
-        submitInquiry.textContent = "Submit Inquiry";
-      }
-    });
-  }
+  contactList.innerHTML = `
+    <li><strong>Phone:</strong> <a href="tel:${(contactData.phone || "").replace(/\s+/g, "")}">${contactData.phone || "-"}</a></li>
+    <li><strong>Email:</strong> <a href="mailto:${contactData.email || ""}">${contactData.email || "-"}</a></li>
+    <li><strong>Address:</strong> ${contactData.address || "-"}</li>
+    <li><strong>Facebook:</strong> <a href="${contactData.facebook || "#"}" target="_blank" rel="noopener noreferrer">Open Page</a></li>
+  `;
 }
 
 function bindMenu() {
