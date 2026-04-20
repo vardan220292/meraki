@@ -164,7 +164,7 @@ function fillContactPage(contactData) {
     const payload = formPayload(form);
     const subject = encodeURIComponent("Event Inquiry - Meraki Concepts & Decor");
     const body = encodeURIComponent(payloadToMessage(payload));
-    window.location.href = `mailto:${contactData.email || "merakieventsndecor@gmail.com"}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${contactData.email || "gupta.vardan@gmail.com"}?subject=${subject}&body=${body}`;
   });
 
   if (submitInquiry) {

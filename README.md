@@ -48,3 +48,8 @@ http://localhost:8080
 2. Open **Settings → Pages**.
 3. Select branch and root folder.
 4. Save and wait for deployment.
+
+
+## Testing defaults
+- Email: `gupta.vardan@gmail.com`
+- Phone / WhatsApp: `+61450062206`

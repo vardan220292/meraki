@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact | Meraki Concepts & Decor</title>
+    <title>Contact | Meraki Events n Decor</title>
     <meta
       name="description"
-      content="Contact Meraki Concepts & Decor for wedding planning and event decor inquiries via WhatsApp or email."
+      content="Contact Meraki Events n Decor for wedding and event decor inquiries via direct submit, WhatsApp or email."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,10 @@
   <body>
     <header class="site-header">
       <div class="container nav-wrap">
-        <a href="index.html" class="brand" id="contactBrand">Meraki Concepts & Decor</a>
+        <a href="index.html" class="brand" id="contactBrand">
+          <img src="assets/meraki-logo.svg" alt="Meraki logo" class="brand-logo" />
+          <span>Meraki Events n Decor</span>
+        </a>
         <nav class="nav-links force-open">
           <a href="index.html">Home</a>
           <a href="#contactForm">Inquiry Form</a>
@@ -32,40 +35,19 @@
         <div class="container forum-grid">
           <div>
             <p class="eyebrow">Get in Touch</p>
-            <h1>Plan Your Event with Us</h1>
-            <p>
-              Tell us your event type, date, and venue details. You can send the inquiry directly over WhatsApp or
-              instantly open an email draft.
-            </p>
+            <h1>Plan Your Event with Meraki</h1>
+            <p>Fill your event details and send inquiry directly to our team.</p>
             <ul class="contact-list" id="forumContactList"></ul>
           </div>
 
           <form class="card forum-form" id="inquiryForm">
             <h2>Event Inquiry</h2>
-            <label>
-              Full Name
-              <input name="name" required type="text" placeholder="Enter your full name" />
-            </label>
-            <label>
-              Phone Number
-              <input name="phone" required type="tel" placeholder="Your contact number" />
-            </label>
-            <label>
-              Event Type
-              <input name="eventType" required type="text" placeholder="Wedding, Reception, Haldi, etc." />
-            </label>
-            <label>
-              Event Date
-              <input name="eventDate" type="date" />
-            </label>
-            <label>
-              Venue / City
-              <input name="venue" type="text" placeholder="Venue or city" />
-            </label>
-            <label>
-              Message
-              <textarea name="message" rows="4" placeholder="Share your expectations and guest count"></textarea>
-            </label>
+            <label>Full Name<input name="name" required type="text" placeholder="Enter your full name" /></label>
+            <label>Phone Number<input name="phone" required type="tel" placeholder="Your contact number" /></label>
+            <label>Event Type<input name="eventType" required type="text" placeholder="Wedding, Reception, Haldi, etc." /></label>
+            <label>Event Date<input name="eventDate" type="date" /></label>
+            <label>Venue / City<input name="venue" type="text" placeholder="Venue or city" /></label>
+            <label>Message<textarea name="message" rows="4" placeholder="Share your expectations and guest count"></textarea></label>
 
             <div class="form-actions">
               <button type="button" class="btn btn-primary" id="submitInquiry">Submit Inquiry</button>
@@ -80,7 +62,7 @@
 
     <footer class="site-footer">
       <div class="container footer-wrap">
-        <p>© <span id="year"></span> <span id="contactFooterBusiness">Meraki Concepts & Decor</span></p>
+        <p>© <span id="year"></span> <span id="contactFooterBusiness">Meraki Events n Decor</span></p>
         <a href="index.html">Back to Home</a>
       </div>
     </footer>

@@ -65,7 +65,18 @@ h3,
   text-decoration: none;
   color: var(--text);
   font-weight: 700;
-  font-size: clamp(1.18rem, 2.7vw, 1.75rem);
+  font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.brand-logo {
+  width: 54px;
+  height: 54px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 1px solid var(--line);
 }
 
 .nav-links {
