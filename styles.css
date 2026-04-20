@@ -1,14 +1,14 @@
 :root {
   --bg: #fffdfb;
-  --text: #221a17;
-  --muted: #6e5a50;
-  --primary: #a35d3d;
-  --primary-dark: #7a3f25;
+  --text: #241a17;
+  --muted: #6d5a51;
+  --primary: #9d5637;
+  --primary-dark: #7b3f25;
   --alt: #f6eee8;
-  --line: #eadfd7;
+  --line: #eaded5;
   --card: #ffffff;
   --radius: 16px;
-  --shadow: 0 10px 24px rgba(29, 18, 12, 0.08);
+  --shadow: 0 14px 30px rgba(34, 20, 13, 0.09);
 }
 
 * {
@@ -19,7 +19,7 @@ body {
   margin: 0;
   font-family: Inter, sans-serif;
   color: var(--text);
-  background: radial-gradient(circle at top right, #fff4ee, var(--bg) 45%);
+  background: var(--bg);
   line-height: 1.65;
 }
 
@@ -32,12 +32,12 @@ h3,
 }
 
 .container {
-  width: min(1120px, 92%);
+  width: min(1140px, 92%);
   margin: 0 auto;
 }
 
 .section {
-  padding: 4rem 0;
+  padding: 4.2rem 0;
 }
 
 .alt {
@@ -48,24 +48,24 @@ h3,
   position: sticky;
   top: 0;
   z-index: 20;
-  background: rgba(255, 253, 251, 0.92);
-  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.9);
   border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(8px);
 }
 
 .nav-wrap {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.85rem 0;
   gap: 1rem;
+  padding: 0.85rem 0;
 }
 
 .brand {
   text-decoration: none;
   color: var(--text);
   font-weight: 700;
-  font-size: clamp(1.2rem, 2.5vw, 1.75rem);
+  font-size: clamp(1.18rem, 2.7vw, 1.75rem);
 }
 
 .nav-links {
@@ -75,8 +75,8 @@ h3,
 }
 
 .nav-links a {
-  text-decoration: none;
   color: var(--text);
+  text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
 }
@@ -86,86 +86,104 @@ h3,
   border: 1px solid var(--line);
   background: #fff;
   border-radius: 10px;
-  font-size: 1.15rem;
   padding: 0.35rem 0.6rem;
+  font-size: 1.1rem;
 }
 
 .hero {
-  padding-top: 4.7rem;
+  position: relative;
+  background-image: url("https://images.unsplash.com/photo-1511795409834-432f7b1728f2?auto=format&fit=crop&w=2000&q=80");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
 }
 
-.hero-grid,
-.split-grid,
-.forum-grid {
-  display: grid;
-  gap: 1.35rem;
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(22, 12, 8, 0.8) 0%, rgba(22, 12, 8, 0.55) 45%, rgba(22, 12, 8, 0.35) 100%);
 }
 
 .hero-grid {
-  grid-template-columns: 1.3fr 1fr;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 1.2rem;
+  color: #fff;
 }
 
-.split-grid,
-.forum-grid {
-  grid-template-columns: 1.15fr 1fr;
+.hero-content {
+  padding: 2rem 0;
 }
 
 .eyebrow {
-  color: var(--primary-dark);
   text-transform: uppercase;
-  font-weight: 700;
   letter-spacing: 0.07em;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
+  font-weight: 700;
+  opacity: 0.9;
 }
 
 h1 {
-  margin: 0.4rem 0 0.8rem;
-  font-size: clamp(2rem, 5vw, 3.2rem);
+  margin: 0.45rem 0 0.8rem;
+  font-size: clamp(2rem, 5vw, 3.3rem);
 }
 
 h2 {
-  margin: 0 0 0.9rem;
-  font-size: clamp(1.7rem, 3.8vw, 2.35rem);
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.65rem, 3.6vw, 2.35rem);
 }
 
-.hero p,
-.card p {
-  color: var(--muted);
+.hero p {
+  color: rgba(255, 255, 255, 0.92);
 }
 
 .hero-cta {
   display: flex;
+  gap: 0.75rem;
   flex-wrap: wrap;
-  gap: 0.8rem;
   margin: 1rem 0;
 }
 
 .hero-mini {
   display: flex;
-  gap: 1rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
-  color: var(--muted);
-  font-size: 0.94rem;
 }
 
 .hero-mini span {
-  background: #fff;
-  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.28);
   border-radius: 999px;
-  padding: 0.3rem 0.7rem;
+  padding: 0.35rem 0.72rem;
+  font-size: 0.9rem;
 }
 
-.card,
-.glass {
+.card {
   background: var(--card);
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  padding: 1.1rem;
+  padding: 1.15rem;
   box-shadow: var(--shadow);
 }
 
-.glass {
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.85), rgba(255, 247, 241, 0.93));
+.hero-panel {
+  align-self: end;
+  background: rgba(255, 255, 255, 0.93);
+  color: var(--text);
+}
+
+.hero-panel li,
+.card p {
+  color: var(--muted);
+}
+
+.split-grid,
+.forum-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1.2rem;
 }
 
 #quickDetails,
@@ -174,26 +192,26 @@ h2 {
   padding-left: 1.1rem;
 }
 
-.service-grid {
+.service-grid,
+.process-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1rem;
 }
 
-.gallery-grid {
-  margin-top: 1rem;
+.portfolio-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0.85rem;
+  gap: 0.9rem;
 }
 
-.gallery-grid img {
+.portfolio-grid img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: 12px;
   border: 1px solid var(--line);
-  box-shadow: 0 4px 12px rgba(20, 15, 10, 0.06);
+  box-shadow: 0 7px 14px rgba(25, 18, 14, 0.08);
 }
 
 .drive-panel {
@@ -201,10 +219,10 @@ h2 {
 }
 
 .drive-embed-wrap {
+  margin-top: 0.75rem;
+  border: 1px solid var(--line);
   border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--line);
-  margin-top: 0.8rem;
 }
 
 #driveFrame {
@@ -215,7 +233,8 @@ h2 {
 }
 
 .cta-band {
-  padding: 3rem 0;
+  background: linear-gradient(135deg, #26140e, #4a2418);
+  color: #fff;
 }
 
 .cta-inner {
@@ -252,16 +271,16 @@ textarea {
 
 .hint {
   margin: 0;
-  font-size: 0.85rem;
+  font-size: 0.84rem;
   color: var(--muted);
 }
 
 .btn {
   display: inline-block;
-  border-radius: 11px;
   text-decoration: none;
-  padding: 0.72rem 1.05rem;
+  border-radius: 10px;
   border: 1px solid transparent;
+  padding: 0.72rem 1.06rem;
   font-weight: 700;
   cursor: pointer;
 }
@@ -295,17 +314,18 @@ textarea {
 }
 
 .footer-wrap a {
+  text-decoration: none;
   color: var(--primary-dark);
   font-weight: 600;
-  text-decoration: none;
 }
 
-@media (max-width: 920px) {
+@media (max-width: 980px) {
   .hero-grid,
   .split-grid,
   .forum-grid,
   .service-grid,
-  .gallery-grid,
+  .process-grid,
+  .portfolio-grid,
   .cta-inner {
     grid-template-columns: 1fr;
     display: grid;
@@ -319,11 +339,11 @@ textarea {
     display: none;
     position: absolute;
     top: 62px;
-    right: 4%;
     left: 4%;
-    border-radius: 12px;
-    border: 1px solid var(--line);
+    right: 4%;
     background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 12px;
     padding: 0.8rem;
     flex-direction: column;
     align-items: flex-start;

@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Contact Forum | Meraki Concepts & Decor</title>
+    <title>Contact | Meraki Concepts & Decor</title>
     <meta
       name="description"
-      content="Send your event inquiry to Meraki Concepts & Decor via WhatsApp or email using this contact forum page."
+      content="Contact Meraki Concepts & Decor for wedding planning and event decor inquiries via WhatsApp or email."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,33 +22,33 @@
         <a href="index.html" class="brand" id="contactBrand">Meraki Concepts & Decor</a>
         <nav class="nav-links force-open">
           <a href="index.html">Home</a>
-          <a href="#contactForum">Forum</a>
+          <a href="#contactForm">Inquiry Form</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <section id="contactForum" class="section forum-hero">
+      <section id="contactForm" class="section forum-hero">
         <div class="container forum-grid">
           <div>
-            <p class="eyebrow">Forum / Inquiry Page</p>
-            <h1>Tell Us About Your Event</h1>
+            <p class="eyebrow">Get in Touch</p>
+            <h1>Plan Your Event with Us</h1>
             <p>
-              Fill this quick forum and choose your preferred contact channel. You can send your details directly on
-              WhatsApp or open your email draft instantly.
+              Tell us your event type, date, and venue details. You can send the inquiry directly over WhatsApp or
+              instantly open an email draft.
             </p>
             <ul class="contact-list" id="forumContactList"></ul>
           </div>
 
           <form class="card forum-form" id="inquiryForm">
-            <h2>Event Inquiry Forum</h2>
+            <h2>Event Inquiry</h2>
             <label>
-              Your Name
+              Full Name
               <input name="name" required type="text" placeholder="Enter your full name" />
             </label>
             <label>
               Phone Number
-              <input name="phone" required type="tel" placeholder="Your best contact number" />
+              <input name="phone" required type="tel" placeholder="Your contact number" />
             </label>
             <label>
               Event Type
@@ -59,21 +59,19 @@
               <input name="eventDate" type="date" />
             </label>
             <label>
-              Event Venue
-              <input name="venue" type="text" placeholder="City / Venue name" />
+              Venue / City
+              <input name="venue" type="text" placeholder="Venue or city" />
             </label>
             <label>
               Message
-              <textarea name="message" rows="4" placeholder="Share your theme, guest count, and budget range"></textarea>
+              <textarea name="message" rows="4" placeholder="Share your expectations and guest count"></textarea>
             </label>
+
             <div class="form-actions">
               <button type="button" class="btn btn-primary" id="sendWhatsApp">Send on WhatsApp</button>
               <button type="button" class="btn btn-light" id="sendEmail">Send via Email</button>
             </div>
-            <p class="hint" id="forumHint">
-              WhatsApp testing number is set to +61450062206 (as requested). You can change it in
-              <code>data/contact.json</code> later.
-            </p>
+            <p class="hint" id="forumHint"></p>
           </form>
         </div>
       </section>
