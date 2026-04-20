@@ -21,9 +21,9 @@ function fillGlobalElements(contactData) {
 
   const businessName = contactData.businessName || "Meraki Concepts & Decor";
   const nodes = [
-    document.getElementById("brandName"),
+    document.getElementById("brandText") || document.getElementById("brandName"),
     document.getElementById("footerBusiness"),
-    document.getElementById("contactBrand"),
+    document.getElementById("contactBrandText") || document.getElementById("contactBrand"),
     document.getElementById("contactFooterBusiness"),
     document.getElementById("aboutBusiness")
   ];
@@ -60,11 +60,6 @@ function fillHomePage(contactData) {
       <span>📞 ${contactData.phone || "NA"}</span>
       <span>✉️ ${contactData.email || "NA"}</span>
     `;
-  }
-
-  const driveFrame = document.getElementById("driveFrame");
-  if (driveFrame && contactData.googleDriveFolderId) {
-    driveFrame.src = `https://drive.google.com/embeddedfolderview?id=${contactData.googleDriveFolderId}#grid`;
   }
 
   const schemaNode = document.getElementById("schemaData");
